@@ -1,0 +1,16 @@
+PODS:
+  - MathExpression (1.3.0)
+
+DEPENDENCIES:
+  - MathExpression (~> 1.3.0)
+
+SPEC REPOS:
+  trunk:
+    - MathExpression
+
+SPEC CHECKSUMS:
+  MathExpression: fd81e15824ba0ed6a25a7beefdd3705ddb33c817
+
+PODFILE CHECKSUM: c74d8500d0599c5d96ec9ad1d79361b724a057cf
+
+COCOAPODS: 1.11.3
