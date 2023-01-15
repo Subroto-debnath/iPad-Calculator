@@ -45,11 +45,14 @@ struct ContentView: View {
                     Text("(  )").customButtonText(color: 0xcc9900)
                 }
                 Button{
-                    currentText = currentText + "%"
+                    currentText = String(currentText.dropLast())
+                    result = calculateResult(currText: currentText)
                 } label: {
-                    Text("%").customButtonText(color: 0xcc9900)
-                        
-                    
+                    Image("ios-delete-icon-14")
+                        .background(Color.init(hex:0xcc9900))
+                        .frame(width: UIScreen.main.bounds.width/4.63,height: UIScreen.main.bounds.height/7.41)
+                        .cornerRadius(20)
+                        .foregroundColor(.white)
                 }
                 Button{
                     currentText = currentText + "/"
@@ -154,20 +157,14 @@ struct ContentView: View {
                     Text(".").customButtonText(color: 0x9966ff)
                 }
                 Button{
-                    currentText = String(currentText.dropLast())
-                    result = calculateResult(currText: currentText)
-                } label: {
-                    Image("ios-delete-icon-14")
-                        .background(Color.init(hex:0x9966ff))
-                        .frame(width: UIScreen.main.bounds.width/4.63,height: UIScreen.main.bounds.height/7.41)
-                        .cornerRadius(20)
-                        .foregroundColor(.white)
-                }
-                Button{
                     result = calculateResult(currText: currentText)
                     braketCount = 0
                 } label: {
-                    Text("=").customButtonText(color: 0xff9966)
+                    Text("=").frame(width: UIScreen.main.bounds.width/4.63*2,height: UIScreen.main.bounds.height/7.41) // width = 180, Height = 150
+                        .foregroundColor(.white)
+                        .background(Color.init(hex: 0xff9966))
+                        .cornerRadius(20)
+                        .font(.system(size: 80))
                 }
             }
             .buttonStyle(.plain)

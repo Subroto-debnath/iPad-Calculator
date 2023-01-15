@@ -15,6 +15,7 @@ func calculateResult(currText:String) -> String{
        // return String(format:"%g",value!)
         let formatter = NumberFormatter()
         let number = NSNumber(value: value!)
+        print("Number = \(number)")
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 16
         return formatter.string(from: number) ?? ""
